@@ -10,13 +10,13 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
  console.log('%s listening to %s', server.name, server.url);
 });
 // Create chat bot
-var connector = new builder.ChatConnector({
- appId: 'a0f93c32-e20b-4442-a4dd-bd335b6b48ad',
- appPassword: 'mxntSUG2^};cgiZZWP4066-'
-});
+// var connector = new builder.ChatConnector({
+//  appId: 'a0f93c32-e20b-4442-a4dd-bd335b6b48ad',
+//  appPassword: 'mxntSUG2^};cgiZZWP4066-'
+// });
 
 var inMemoryStorage = new builder.MemoryBotStorage();
-// var connector = new builder.ConsoleConnector().listen();
+var connector = new builder.ConsoleConnector().listen();
 var bot = new builder.UniversalBot(connector, function (session) {
     session.send("Say 'help' or something else...");
 }).set('storage', inMemoryStorage);
