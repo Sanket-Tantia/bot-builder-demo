@@ -37,8 +37,8 @@ server.post('/api/messages', connector.listen());
 // Bots Dialogs 
 // =========================================================
 // This is called the root dialog. It is the first point of entry for any message the bot receives
-bot.dialog('/', function (session) {
-    console.log("hehe",session);
-// Send 'hello world' to the user
-session.send("Hello World");
-});
+// bot.dialog('/', function (session) {
+//     console.log("hehe",session);
+// // Send 'hello world' to the user
+// session.send("Hello World");
+// });
