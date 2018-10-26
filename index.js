@@ -2,13 +2,13 @@ var restify = require('restify');
 var builder = require('botbuilder');
 var azure = require('botbuilder-azure');
 
-var tableName = "Table-Name"; // You define
-var storageName = "Table-Storage-Name"; // Obtain from Azure Portal
-var storageKey = "Azure-Table-Key"; // Obtain from Azure Portal
+// var tableName = "Table-Name"; // You define
+// var storageName = "Table-Storage-Name"; // Obtain from Azure Portal
+// var storageKey = "Azure-Table-Key"; // Obtain from Azure Portal
 
-var azureTableClient = new azure.AzureTableClient(tableName, storageName, storageKey);
+// var azureTableClient = new azure.AzureTableClient(tableName, storageName, storageKey);
 
-var tableStorage = new azure.AzureBotStorage({gzipData: false}, azureTableClient);
+// var tableStorage = new azure.AzureBotStorage({gzipData: false}, azureTableClient);
 // =========================================================
 // Bot Setup
 // =========================================================
