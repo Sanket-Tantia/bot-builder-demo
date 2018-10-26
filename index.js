@@ -14,6 +14,12 @@ var connector = new builder.ChatConnector({
  appId: 'a0f93c32-e20b-4442-a4dd-bd335b6b48ad',
  appPassword: 'mxntSUG2^};cgiZZWP4066-'
 });
+
+var inMemoryStorage = new builder.MemoryBotStorage();
+// var connector = new builder.ConsoleConnector().listen();
+var bot = new builder.UniversalBot(connector, function (session) {
+    session.send("Say 'help' or something else...");
+}).set('storage', inMemoryStorage);
 var bot = new builder.UniversalBot(connector);
 // If a Post request is made to /api/messages on port 3978 of our local server, then we pass it to the bot connector to handle
 server.post('/api/messages', connector.listen());
