@@ -1,5 +1,14 @@
 var restify = require('restify');
 var builder = require('botbuilder');
+var azure = require('botbuilder-azure');
+
+var tableName = "Table-Name"; // You define
+var storageName = "Table-Storage-Name"; // Obtain from Azure Portal
+var storageKey = "Azure-Table-Key"; // Obtain from Azure Portal
+
+var azureTableClient = new azure.AzureTableClient(tableName, storageName, storageKey);
+
+var tableStorage = new azure.AzureBotStorage({gzipData: false}, azureTableClient);
 // =========================================================
 // Bot Setup
 // =========================================================
@@ -8,6 +17,7 @@ var builder = require('botbuilder');
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function () {
  console.log('%s listening to %s', server.name, server.url);
+ console.log("hehe");
 });
 // Create chat bot
 var connector = new builder.ChatConnector({
